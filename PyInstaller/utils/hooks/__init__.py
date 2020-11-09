@@ -95,8 +95,7 @@ def exec_script(script_filename, *args, env=None):
                           "PyInstaller.utils.hooks.exec_script must be located "
                           "in the `PyInstaller/utils/hooks/subproc` directory.")
 
-    cmd = [script_filename]
-    cmd.extend(args)
+    cmd = [script_filename, *args]
     return __exec_python_cmd(cmd, env=env)
 
 
